@@ -26,7 +26,7 @@ class PackageTour extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function packagePhotos()
+    public function package_photos()
     {
         return $this->hasMany(PackagePhoto::class);
     }
