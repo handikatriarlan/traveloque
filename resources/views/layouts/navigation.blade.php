@@ -16,17 +16,29 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
-                        {{ __('Categories') }}
-                    </x-nav-link>
+                    @role('customer')
+                        <x-nav-link :href="route('dashboard.bookings')" :active="request()->routeIs('dashboard.bookings')">
+                            {{ __('My Bookings') }}
+                        </x-nav-link>
+                    @endrole
 
-                    <x-nav-link :href="route('admin.package_banks.index')" :active="request()->routeIs('admin.package_banks.index')">
-                        {{ __('Banks') }}
-                    </x-nav-link>
+                    @role('super_admin')
+                        <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
+                            {{ __('Categories') }}
+                        </x-nav-link>
 
-                    <x-nav-link :href="route('admin.package_tours.index')" :active="request()->routeIs('admin.package_tours.index')">
-                        {{ __('Package Tours') }}
-                    </x-nav-link>
+                        <x-nav-link :href="route('admin.package_banks.index')" :active="request()->routeIs('admin.package_banks.index')">
+                            {{ __('Banks') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('admin.package_tours.index')" :active="request()->routeIs('admin.package_tours.index')">
+                            {{ __('Package Tours') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('admin.package_bookings.index')" :active="request()->routeIs('admin.package_bookings.index')">
+                            {{ __('Package Bookings') }}
+                        </x-nav-link>
+                    @endrole
                 </div>
             </div>
 
