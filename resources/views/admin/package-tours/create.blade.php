@@ -9,7 +9,7 @@
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg">
 
-                <form method="POST" action="#" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('admin.package-tours.store') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div>
@@ -32,6 +32,9 @@
                         <select name="category_id" id="category_id"
                             class="py-3 rounded-lg pl-3 w-full border border-slate-300">
                             <option value="">Choose category</option>
+                            @foreach ($categories as $category)
+                            @endforeach
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
                         </select>
 
                         <x-input-error :messages="$errors->get('category')" class="mt-2" />
@@ -65,16 +68,16 @@
                     </div>
 
                     <hr class="my-5">
-
-                    <div class="mt-4">
-                        <x-input-label for="photo" :value="__('photo')" />
-                        <x-text-input id="photo" class="block mt-1 w-full" type="file" name="photos[]" required
-                            autofocus autocomplete="photo" />
-                        <x-input-error :messages="$errors->get('photo')" class="mt-2" />
-                    </div>
+                    @for ($i = 0; $i < 3; $i++)
+                        <div class="mt-4">
+                            <x-input-label for="photo" :value="__('photo')" />
+                            <x-text-input id="photo" class="block mt-1 w-full" type="file" name="photos[]"
+                                required autofocus autocomplete="photo" />
+                            <x-input-error :messages="$errors->get('photo')" class="mt-2" />
+                        </div>
+                    @endfor
 
                     <div class="flex items-center justify-end mt-4">
-
                         <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Add New Tour
                         </button>

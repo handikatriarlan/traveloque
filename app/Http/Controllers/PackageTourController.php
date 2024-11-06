@@ -25,7 +25,7 @@ class PackageTourController extends Controller
      */
     public function create()
     {
-        $categories = Category::orderByDesc('id');
+        $categories = Category::orderByDesc('id')->get();
         return view('admin.package-tours.create', compact('categories'));
     }
 
@@ -46,15 +46,17 @@ class PackageTourController extends Controller
 
             $packageTour = PackageTour::create($validated);
 
-            if ($request->hasFiles('photos')) {
+            if ($request->hasFile('photos')) {
                 foreach ($request->file('photos') as $photo) {
-                    $photoPath = $photo->file('photos')->store('package_photos/' . date('Y/m/d'), 'public');
+                    $photoPath = $photo->store('package_photos/' . date('Y/m/d'), 'public');
                     $packageTour->package_photos()->create([
                         'photo' => $photoPath
                     ]);
                 }
             }
         });
+
+        return redirect()->route('admin.package-tours.index');
     }
 
     /**
