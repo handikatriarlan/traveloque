@@ -27,15 +27,15 @@
                             {{ __('Categories') }}
                         </x-nav-link>
 
-                        <x-nav-link :href="route('admin.package_banks.index')" :active="request()->routeIs('admin.package_banks.index')">
+                        <x-nav-link :href="route('admin.package-banks.index')" :active="request()->routeIs('admin.package-banks.index')">
                             {{ __('Banks') }}
                         </x-nav-link>
 
-                        <x-nav-link :href="route('admin.package_tours.index')" :active="request()->routeIs('admin.package_tours.index')">
+                        <x-nav-link :href="route('admin.package-tours.index')" :active="request()->routeIs('admin.package-tours.index')">
                             {{ __('Package Tours') }}
                         </x-nav-link>
 
-                        <x-nav-link :href="route('admin.package_bookings.index')" :active="request()->routeIs('admin.package_bookings.index')">
+                        <x-nav-link :href="route('admin.package-bookings.index')" :active="request()->routeIs('admin.package-bookings.index')">
                             {{ __('Package Bookings') }}
                         </x-nav-link>
                     @endrole

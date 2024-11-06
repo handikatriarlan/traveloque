@@ -25,7 +25,7 @@ class UpdatePackageBankRequest extends FormRequest
             'bank_name' => ['required', 'string', 'max:255'],
             'bank_account_name' => ['required', 'string', 'max:255'],
             'bank_account_number' => ['required', 'string', 'max:255'],
-            'logo' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'logo' => ['sometimes', 'image', 'mimes:png,jpg,jpeg'],
         ];
     }
 }

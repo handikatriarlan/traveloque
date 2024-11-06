@@ -13,7 +13,7 @@ class PackageBank extends Model
     protected $fillable = [
         'bank_name',
         'bank_account_name',
-        'bank_number_name',
+        'bank_account_number',
         'logo',
     ];
 }

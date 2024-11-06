@@ -17,7 +17,7 @@ class PackageBankController extends Controller
     public function index()
     {
         $banks = PackageBank::orderByDesc('id')->paginate(10);
-        return view('admin.banks.index', compact('banks'));
+        return view('admin.package-banks.index', compact('banks'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PackageBankController extends Controller
      */
     public function create()
     {
-        return view('admin.banks.create');
+        return view('admin.package-banks.create');
     }
 
     /**
@@ -36,17 +36,15 @@ class PackageBankController extends Controller
         DB::transaction(function () use ($request) {
             $validated = $request->validated();
 
-            if ($request->hasFile('icon')) {
+            if ($request->hasFile('logo')) {
                 $logoPath = $request->file('logo')->store('logos', 'public');
                 $validated['logo'] = $logoPath;
             }
 
-            $validated['slug'] = Str::slug($validated['name']);
-
             $newBank = PackageBank::create($validated);
         });
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.package-banks.index');
     }
 
     /**
@@ -62,7 +60,7 @@ class PackageBankController extends Controller
      */
     public function edit(PackageBank $packageBank)
     {
-        return view('admin.banks.edit', compact('packageBank'));
+        return view('admin.package-banks.edit', compact('packageBank'));
     }
 
     /**
@@ -81,7 +79,7 @@ class PackageBankController extends Controller
             $packageBank->update($validated);
         });
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.package-banks.index');
     }
 
     /**
@@ -93,6 +91,6 @@ class PackageBankController extends Controller
             $packageBank->delete();
         });
 
-        return redirect()->route('admin.banks.index');
+        return redirect()->route('admin.package-banks.index');
     }
 }

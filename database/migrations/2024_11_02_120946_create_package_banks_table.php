@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('package_banks', function (Blueprint $table) {
             $table->id();
-            $table->string('ban_name');
+            $table->string('bank_name');
             $table->string('bank_account_name');
             $table->string('bank_account_number');
             $table->softDeletes();

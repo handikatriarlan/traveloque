@@ -65,15 +65,15 @@ Route::middleware('auth')->group(function () {
         });
 
         Route::middleware('can:manage packages')->group(function () {
-            Route::resource('package_tours', PackageTourController::class);
+            Route::resource('package-tours', PackageTourController::class);
         });
 
         Route::middleware('can:manage package banks')->group(function () {
-            Route::resource('package_banks', PackageBankController::class);
+            Route::resource('package-banks', PackageBankController::class);
         });
 
         Route::middleware('can:manage transactions')->group(function () {
-            Route::resource('package_bookings', PackageBookingController::class);
+            Route::resource('package-bookings', PackageBookingController::class);
         });
     });
 });
