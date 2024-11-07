@@ -102,6 +102,30 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            @role('customer')
+                <x-responsive-nav-link :href="route('dashboard.bookings')" :active="request()->routeIs('dashboard.bookings')">
+                    {{ __('My Bookings') }}
+                </x-responsive-nav-link>
+            @endrole
+
+            @role('super_admin')
+                <x-responsive-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
+                    {{ __('Categories') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('admin.package-banks.index')" :active="request()->routeIs('admin.package-banks.index')">
+                    {{ __('Banks') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('admin.package-tours.index')" :active="request()->routeIs('admin.package-tours.index')">
+                    {{ __('Package Tours') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('admin.package-bookings.index')" :active="request()->routeIs('admin.package-bookings.index')">
+                    {{ __('Package Bookings') }}
+                </x-responsive-nav-link>
+            @endrole
         </div>
 
         <!-- Responsive Settings Options -->
