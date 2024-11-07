@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PackageTour;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -11,7 +12,8 @@ class FrontController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $packageTours = PackageTour::orderByDesc('id')->take(3)->get();
+        return view('front.index', compact('packageTours'));
     }
 
     /**
