@@ -30,7 +30,8 @@
                 @guest
                     <div
                         class="w-12 h-12 border-4 border-white rounded-full overflow-hidden flex shrink-0 shadow-[6px_8px_20px_0_#00000008]">
-                        <img src="assets/photos/pfp.png" class="w-full h-full object-cover object-center" alt="photo">
+                        <img src="{{ asset('assets/avatars/default-avatar.png') }}"
+                            class="w-full h-full object-cover object-center" alt="photo">
                     </div>
                     <div class="flex flex-col gap-1">
                         <p class="text-xs tracking-035">Welcome!</p>
@@ -41,7 +42,7 @@
             <a href="">
                 <div
                     class="w-12 h-12 rounded-full bg-white overflow-hidden flex shrink-0 items-center justify-center shadow-[6px_8px_20px_0_#00000008]">
-                    <img src="assets/icons/bell.svg" alt="icon">
+                    <img src="{{ asset('assets/icons/bell.svg') }}" alt="icon">
                 </div>
             </a>
         </nav>
@@ -53,7 +54,7 @@
                     <div
                         class="p-3 flex items-center gap-2 rounded-[10px] border border-[#4D73FF] group-hover:bg-[#4D73FF] transition-all duration-300">
                         <div class="w-6 h-6 flex shrink-0">
-                            <img src="assets/icons/umbrella.svg" alt="icon">
+                            <img src="{{ asset('assets/icons/umbrella.svg') }}" alt="icon">
                         </div>
                         <span
                             class="text-sm tracking-[0.35px] text-[#4D73FF] group-hover:text-white transition-all duration-300">Beach</span>
@@ -63,7 +64,7 @@
                     <div
                         class="p-3 flex items-center gap-2 rounded-[10px] border border-[#4D73FF] group-hover:bg-[#4D73FF] transition-all duration-300">
                         <div class="w-6 h-6 flex shrink-0">
-                            <img src="assets/icons/mountain.svg" alt="icon">
+                            <img src="{{ asset('assets/icons/mountain.svg') }}" alt="icon">
                         </div>
                         <span
                             class="text-sm tracking-[0.35px] text-[#4D73FF] group-hover:text-white transition-all duration-300">Mountain</span>
@@ -73,7 +74,7 @@
                     <div
                         class="p-3 flex items-center gap-2 rounded-[10px] border border-[#4D73FF] group-hover:bg-[#4D73FF] transition-all duration-300">
                         <div class="w-6 h-6 flex shrink-0">
-                            <img src="assets/icons/tent.svg" alt="icon">
+                            <img src="{{ asset('assets/icons/tent.svg') }}" alt="icon">
                         </div>
                         <span
                             class="text-sm tracking-[0.35px] text-[#4D73FF] group-hover:text-white transition-all duration-300">Nature</span>
@@ -83,7 +84,7 @@
                     <div
                         class="p-3 flex items-center gap-2 rounded-[10px] border border-[#4D73FF] group-hover:bg-[#4D73FF] transition-all duration-300">
                         <div class="w-6 h-6 flex shrink-0">
-                            <img src="assets/icons/historical.svg" alt="icon">
+                            <img src="{{ asset('assets/icons/historical.svg') }}" alt="icon">
                         </div>
                         <span
                             class="text-sm tracking-[0.35px] text-[#4D73FF] group-hover:text-white transition-all duration-300">Historical</span>
@@ -108,7 +109,7 @@
                                     <p class="font-semibold two-lines">{{ $tour->name }}</p>
                                     <div class="flex items-center gap-1">
                                         <div class="w-4 h-4 flex shrink-0">
-                                            <img src="assets/icons/location-map.svg" alt="icon">
+                                            <img src="{{ asset('assets/icons/location-map.svg') }}" alt="icon">
                                         </div>
                                         <span class="text-sm text-darkGrey tracking-035">{{ $tour->location }}</span>
                                     </div>
@@ -120,11 +121,11 @@
                                         <span class="text-darkGrey">/{{ $tour->days }} days</span>
                                     </p>
                                     <div class="flex items-center gap-1 justify-end">
-                                    <div class="w-4 h-4 flex shrink-0">
-                                        <img src="assets/icons/Star.svg" alt="icon">
+                                        <div class="w-4 h-4 flex shrink-0">
+                                            <img src="{{ asset('assets/icons/Star.svg') }}" alt="icon">
+                                        </div>
+                                        <span class="font-semibold text-sm leading-[21px]">4.8</span>
                                     </div>
-                                    <span class="font-semibold text-sm leading-[21px]">4.8</span>
-                                </div>
                                 </div>
                             </div>
                         </div>
@@ -136,8 +137,8 @@
         </div>
         <div id="discover" class="px-4">
             <div class="w-full h-[130px] flex flex-col gap-[10px] rounded-[22px] items-center overflow-hidden relative">
-                <img src="assets/backgrounds/Banner.png" class="w-full h-full object-cover object-center"
-                    alt="background">
+                <img src="{{ asset('assets/backgrounds/Banner.png') }}"
+                    class="w-full h-full object-cover object-center" alt="background">
                 <div class="absolute z-10 flex flex-col gap-[10px] transform -translate-y-1/2 top-1/2 left-4">
                     <p class="text-white font-semibold">Discover the<br>Beauty of Japan</p>
                     <a href=""
@@ -159,7 +160,7 @@
                                 <p class="font-semibold two-lines">{{ $tour->name }}</p>
                                 <div class="flex items-center gap-1">
                                     <div class="w-4 h-4 flex shrink-0">
-                                        <img src="assets/icons/location-map.svg" alt="icon">
+                                        <img src="{{ asset('assets/icons/location-map.svg') }}" alt="icon">
                                     </div>
                                     <span class="text-sm text-darkGrey tracking-035">{{ $tour->location }}</span>
                                 </div>
@@ -170,12 +171,12 @@
                                         class="font-semibold text-[#4D73FF] text-nowrap">Rp{{ number_format($tour->price, 0, ',', '.') }}</span><br>
                                     <span class="text-darkGrey">/{{ $tour->days }} days</span>
                                 </p>
-                                {{-- <div class="flex items-center gap-1 justify-end">
+                                <div class="flex items-center gap-1 justify-end">
                                     <div class="w-4 h-4 flex shrink-0">
-                                        <img src="assets/icons/Star.svg" alt="icon">
+                                        <img src="{{ asset('assets/icons/Star.svg') }}" alt="icon">
                                     </div>
                                     <span class="font-semibold text-sm leading-[21px]">4.8</span>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -189,7 +190,7 @@
             <a href="" class="menu">
                 <div class="flex flex-col justify-center w-fit gap-1">
                     <div class="w-4 h-4 flex shrink-0 overflow-hidden mx-auto text-[#4D73FF]">
-                        <img src="assets/icons/home.svg" alt="icon">
+                        <img src="{{ asset('assets/icons/home.svg') }}" alt="icon">
                     </div>
                     <p class="font-semibold text-xs leading-[20px] tracking-[0.35px]">Home</p>
                 </div>
@@ -197,7 +198,7 @@
             <a href="" class="menu opacity-25">
                 <div class="flex flex-col justify-center w-fit gap-1">
                     <div class="w-4 h-4 flex shrink-0 overflow-hidden mx-auto text-[#4D73FF]">
-                        <img src="assets/icons/search.svg" alt="icon">
+                        <img src="{{ asset('assets/icons/search.svg') }}" alt="icon">
                     </div>
                     <p class="font-semibold text-xs leading-[20px] tracking-[0.35px]">Search</p>
                 </div>
@@ -205,7 +206,7 @@
             <a href="schedule.html" class="menu opacity-25">
                 <div class="flex flex-col justify-center w-fit gap-1">
                     <div class="w-4 h-4 flex shrink-0 overflow-hidden mx-auto text-[#4D73FF]">
-                        <img src="assets/icons/calendar-blue.svg" alt="icon">
+                        <img src="{{ asset('assets/icons/calendar-blue.svg') }}" alt="icon">
                     </div>
                     <p class="font-semibold text-xs leading-[20px] tracking-[0.35px]">Schedule</p>
                 </div>
@@ -213,7 +214,7 @@
             <a href="" class="menu opacity-25">
                 <div class="flex flex-col justify-center w-fit gap-1">
                     <div class="w-4 h-4 flex shrink-0 overflow-hidden mx-auto text-[#4D73FF]">
-                        <img src="assets/icons/user-flat.svg" alt="icon">
+                        <img src="{{ asset('assets/icons/user-flat.svg') }}" alt="icon">
                     </div>
                     <p class="font-semibold text-xs leading-[20px] tracking-[0.35px]">Profile</p>
                 </div>

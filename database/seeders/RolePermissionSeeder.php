@@ -49,7 +49,7 @@ class RolePermissionSeeder extends Seeder
             'name' => 'Super Admin',
             'email' => 'super@admin.com',
             'phone_number' => '6285260497808',
-            'avatar' => 'images/default-avatar.png',
+            'avatar' => 'avatars/default-avatar.png',
             'password' => bcrypt('123123123'),
         ]);
 
