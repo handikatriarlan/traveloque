@@ -23,6 +23,15 @@
                     <p class="text-sm leading-[25px] tracking-[0.6px] text-darkGrey">Welcome Back! Enter your valid data
                     </p>
                 </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li style="color: red">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="flex flex-col gap-[15px] w-full max-w-[311px]">
                     <div class="flex flex-col gap-1 w-full">
                         <p class="font-semibold">Email</p>
