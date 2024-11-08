@@ -20,7 +20,7 @@ class RolePermissionSeeder extends Seeder
             'manage packages',
             'manage transactions',
             'manage package banks',
-            'checkout packages',
+            'checkout package',
             'view orders',
         ];
 
@@ -35,7 +35,7 @@ class RolePermissionSeeder extends Seeder
         ]);
 
         $customerPermissions = [
-            'checkout packages',
+            'checkout package',
             'view orders',
         ];
 
