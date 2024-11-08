@@ -119,12 +119,12 @@
                                             class="font-semibold text-[#4D73FF] text-nowrap">Rp{{ number_format($tour->price, 0, ',', '.') }}</span><br>
                                         <span class="text-darkGrey">/{{ $tour->days }} days</span>
                                     </p>
-                                    {{-- <div class="flex items-center gap-1 justify-end">
+                                    <div class="flex items-center gap-1 justify-end">
                                     <div class="w-4 h-4 flex shrink-0">
                                         <img src="assets/icons/Star.svg" alt="icon">
                                     </div>
                                     <span class="font-semibold text-sm leading-[21px]">4.8</span>
-                                </div> --}}
+                                </div>
                                 </div>
                             </div>
                         </div>
