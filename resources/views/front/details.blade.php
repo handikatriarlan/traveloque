@@ -168,7 +168,7 @@
                     Rp{{ number_format($packageTour->price, 0, ',', '.') }}<span
                         class="font-normal text-sx leading-[20px] tracking-035 text-darkGrey">/pack</span></p>
             </div>
-            <a href="booking.html"
+            <a href="{{ route('front.book', $packageTour->slug) }}"
                 class="p-[16px_24px] rounded-xl bg-blue w-fit text-white hover:bg-[#06C755] transition-all duration-300">Book
                 Now</a>
         </div>

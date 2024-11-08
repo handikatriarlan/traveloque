@@ -23,6 +23,11 @@ class FrontController extends Controller
         return view('front.details', compact('packageTour', 'latestPhotos'));
     }
 
+    public function book(PackageTour $packageTour)
+    {
+        return view('front.book', compact('packageTour'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
