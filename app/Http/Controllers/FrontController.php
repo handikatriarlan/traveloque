@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePackageBookingRequest;
+use App\Http\Requests\UpdatePackageBookingRequest;
 use App\Models\PackageBank;
 use App\Models\PackageBooking;
 use App\Models\PackageTour;
@@ -71,6 +72,36 @@ class FrontController extends Controller
         } else {
             return back()->withErrors('Failed to Create Booking.');
         }
+    }
+
+    public function choose_bank(PackageBooking $packageBooking)
+    {
+        $user = Auth::user();
+
+        if ($packageBooking->user_id != $user->id) {
+            abort(403);
+        }
+
+        $banks = PackageBank::all();
+        return view('front.choose-bank', compact('packageBooking', 'banks'));
+    }
+
+    public function choose_bank_store(UpdatePackageBookingRequest $request, PackageBooking $packageBooking)
+    {
+        $user = Auth::user();
+
+        if ($packageBooking->user_id != $user->id) {
+            abort(403);
+        }
+
+        DB::transaction(function () use ($request, $packageBooking) {
+            $validated = $request->validated();
+            $packageBooking->update([
+                'package_bank_id' => $validated['package_bank_id'],
+            ]);
+        });
+
+        return redirect()->route('front.book_payment', $packageBooking->id);
     }
 
     /**
