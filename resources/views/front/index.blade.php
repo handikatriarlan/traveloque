@@ -130,7 +130,7 @@
                         </div>
                     </a>
                 @empty
-                    <p>Belum Ada Paket Tour Terbaru.</p>
+                    <p style="margin-left: 15px">Belum Ada Paket Tour Terbaru.</p>
                 @endforelse
             </div>
         </div>

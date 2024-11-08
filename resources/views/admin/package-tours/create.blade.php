@@ -20,14 +20,14 @@
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="thumbnail" :value="__('thumbnail')" />
+                        <x-input-label for="thumbnail" :value="__('Thumbnail')" />
                         <x-text-input id="thumbnail" class="block mt-1 w-full" type="file" name="thumbnail" required
                             autofocus autocomplete="thumbnail" />
                         <x-input-error :messages="$errors->get('thumbnail')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="category" :value="__('category')" />
+                        <x-input-label for="category" :value="__('Category')" />
 
                         <select name="category_id" id="category_id"
                             class="py-3 rounded-lg pl-3 w-full border border-slate-300">
@@ -41,27 +41,27 @@
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="about" :value="__('about')" />
+                        <x-input-label for="about" :value="__('About')" />
                         <textarea name="about" id="about" cols="30" rows="5" class="border border-slate-300 rounded-xl w-full"></textarea>
                         <x-input-error :messages="$errors->get('about')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="location" :value="__('location')" />
+                        <x-input-label for="location" :value="__('Location')" />
                         <x-text-input id="location" class="block mt-1 w-full" type="text" name="location"
                             :value="old('location')" required autofocus autocomplete="location" />
                         <x-input-error :messages="$errors->get('location')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="price" :value="__('price')" />
+                        <x-input-label for="price" :value="__('Price')" />
                         <x-text-input id="price" class="block mt-1 w-full" type="number" name="price"
                             :value="old('price')" required autofocus autocomplete="price" />
                         <x-input-error :messages="$errors->get('price')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="days" :value="__('days')" />
+                        <x-input-label for="days" :value="__('Days')" />
                         <x-text-input id="days" class="block mt-1 w-full" type="text" name="days"
                             :value="old('days')" required autofocus autocomplete="days" />
                         <x-input-error :messages="$errors->get('days')" class="mt-2" />
@@ -70,7 +70,7 @@
                     <hr class="my-5">
                     @for ($i = 0; $i < 3; $i++)
                         <div class="mt-4">
-                            <x-input-label for="photo" :value="__('photo')" />
+                            <x-input-label for="photo" :value="__('Photo')" />
                             <x-text-input id="photo" class="block mt-1 w-full" type="file" name="photos[]"
                                 required autofocus autocomplete="photo" />
                             <x-input-error :messages="$errors->get('photo')" class="mt-2" />
