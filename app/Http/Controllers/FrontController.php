@@ -73,7 +73,7 @@ class FrontController extends Controller
         });
 
         if ($packageBookingId) {
-            return redirect()->route('front.choose_bank', $packageBookingId);
+            return redirect()->route('front.choose-bank', $packageBookingId);
         } else {
             return back()->withErrors('Failed to Create Booking.');
         }
