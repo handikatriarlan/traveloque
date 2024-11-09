@@ -55,7 +55,7 @@ Route::middleware('auth')->group(function () {
                 ->name('bookings');
 
             Route::get('/my-bookings/details/{packageBooking}', [DashboardController::class, 'booking_details'])
-                ->name('booking.details');
+                ->name('booking-details');
         });
     });
 
