@@ -2,7 +2,7 @@
 @section('content')
     <section id="content" class="max-w-[640px] w-full mx-auto bg-[#F9F2EF] min-h-screen flex flex-col gap-8 pb-[120px]">
         <nav class="mt-8 px-4 w-full flex items-center justify-between">
-            <a href="checkout.html">
+            <a href="{{ route('front.choose-bank', $packageBooking->id) }}">
                 <img src="{{ asset('assets/icons/back.png') }}" alt="back">
             </a>
             <p class="text-center m-auto font-semibold">Payment</p>
