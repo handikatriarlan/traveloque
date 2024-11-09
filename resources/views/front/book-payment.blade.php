@@ -1,15 +1,5 @@
-<!doctype html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('output.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-</head>
-
-<body class="font-poppins text-black">
+@extends('front.layouts.app')
+@section('content')
     <section id="content" class="max-w-[640px] w-full mx-auto bg-[#F9F2EF] min-h-screen flex flex-col gap-8 pb-[120px]">
         <nav class="mt-8 px-4 w-full flex items-center justify-between">
             <a href="checkout.html">
@@ -18,8 +8,8 @@
             <p class="text-center m-auto font-semibold">Payment</p>
             <div class="w-12"></div>
         </nav>
-        <form action="{{ route('front.book-payment.store', $packageBooking->id) }}" method="POST"
-            class="flex flex-col gap-8" enctype="multipart/form-data">
+        <form action="{{ route('front.book-payment.store', $packageBooking->id) }}" method="POST" class="flex flex-col gap-8"
+            enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <div class="flex flex-col gap-3 px-4 ">
@@ -53,8 +43,7 @@
                                 <img src="{{ Storage::url($packageBooking->bank->logo) }}"
                                     class="w-full h-full object-contain object-center" alt="logo">
                             </div>
-                            <span
-                                class="text-sm tracking-035 leading-[22px]">{{ $packageBooking->bank->bank_name }}</span>
+                            <span class="text-sm tracking-035 leading-[22px]">{{ $packageBooking->bank->bank_name }}</span>
                         </div>
                     </div>
                     <div class="flex flex-col gap-1">
@@ -104,8 +93,8 @@
                 <div class="flex items-center gap-3">
                     <button type="button" id="upload-file"
                         class="bg-white border border-[#BFBFBF] p-[16px_0_16px_12px] rounded-[10px] overflow-hidden w-full">
-                        <p id="placeholder"
-                            class="text-nowrap text-darkGrey text-sm tracking-035 leading-[22px] text-left">Upload
+                        <p id="placeholder" class="text-nowrap text-darkGrey text-sm tracking-035 leading-[22px] text-left">
+                            Upload
                             Transfer Proof</p>
                         <div id="file-info" class="flex flex-row flex-nowrap gap-3 items-center">
                             <div class="w-6 h-6 flex shrink-0">
@@ -141,8 +130,8 @@
             </div>
         </form>
     </section>
+@endsection
 
+@push('after-scripts')
     <script src="{{ asset('js/payment.js') }}"></script>
-</body>
-
-</html>
+@endpush

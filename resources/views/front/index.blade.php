@@ -1,19 +1,6 @@
-<!doctype html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('output.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-</head>
-
-<body class="font-poppins text-black">
-    <section id="content"
-        class="max-w-[640px] w-full mx-auto bg-[#F9F2EF] min-h-screen flex flex-col gap-8 pb-[120px]">
+@extends('front.layouts.app')
+@section('content')
+    <section id="content" class="max-w-[640px] w-full mx-auto bg-[#F9F2EF] min-h-screen flex flex-col gap-8 pb-[120px]">
         <nav class="mt-8 px-4 w-full flex items-center justify-between">
             <div class="flex items-center gap-3">
                 @auth
@@ -137,8 +124,8 @@
         </div>
         <div id="discover" class="px-4">
             <div class="w-full h-[130px] flex flex-col gap-[10px] rounded-[22px] items-center overflow-hidden relative">
-                <img src="{{ asset('assets/backgrounds/Banner.png') }}"
-                    class="w-full h-full object-cover object-center" alt="background">
+                <img src="{{ asset('assets/backgrounds/Banner.png') }}" class="w-full h-full object-cover object-center"
+                    alt="background">
                 <div class="absolute z-10 flex flex-col gap-[10px] transform -translate-y-1/2 top-1/2 left-4">
                     <p class="text-white font-semibold">Discover the<br>Beauty of Japan</p>
                     <a href=""
@@ -221,14 +208,12 @@
             </a>
         </div>
     </section>
+@endsection
 
+@push('after-scripts')
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- JavaScript -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="{{ asset('js/flickity-slider.js') }}"></script>
     <script src="{{ asset('js/two-lines-text.js') }}"></script>
-
-</body>
-
-</html>
+@endpush
